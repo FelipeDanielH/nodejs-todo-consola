@@ -25,6 +25,12 @@ const main = async () => {
             case '2':
                 tareas.listadoCompleto();
                 break;
+            case '3':
+                tareas.listarPendientesCompleatadas(true);
+                break;
+            case '4':
+                tareas.listarPendientesCompleatadas(false);
+                break;
         }
 
         guardarDB( tareas.listadoArr );
