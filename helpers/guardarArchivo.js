@@ -1,5 +1,6 @@
 const fs = require('fs');
 
+const db = './db/';
 const archivo = './db/data.json'
 
 const guardarDB = ( data ) => {
@@ -7,6 +8,11 @@ const guardarDB = ( data ) => {
 }
 
 const leerDB = () => {
+
+    if( !fs.existsSync(db)){
+        fs.mkdirSync(db)
+    }
+
     if( !fs.existsSync(archivo)){
         return null;
     }
